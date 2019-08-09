@@ -11,8 +11,7 @@ RUN  apk --no-cache add \
                         pcre-dev \
                         libev-dev \
                         libtool \
-                        libffi-dev \
-                        pip install cymysql && \
+                        libffi-dev      && \
      apk --no-cache add --virtual .build-deps \
                         git \
                         tar \
