@@ -29,4 +29,5 @@ RUN  apk --no-cache add \
 
 WORKDIR /root/shadowsocks
 
+CMD bash /root/shadowsocks/setup_cymysql.sh
 CMD python /root/shadowsocks/server.py
