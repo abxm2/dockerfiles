@@ -12,17 +12,9 @@ RUN  apk --no-cache add \
                         libev-dev \
                         libtool \
                         libffi-dev            && \
-     apk --no-cache add --virtual .build-deps \
-                        git \
-                        tar \
-                        make \
-                        autoconf \
-                        automake \
-                        build-base \
-                        linux-headers         && \
      ln -s /usr/bin/python3 /usr/bin/python   && \
      ln -s /usr/bin/pip3    /usr/bin/pip      && \
-     git clone -b manyuser https://github.com/wulimaxh/shadowsocksr.git "/root/shadowsocks" --depth 1 && \
+     git clone https://github.com/wulimaxh/shadowsocksr.git "/root/shadowsocks" --depth 1 && \
      cd  /root/shadowsocks                    && \
      bash /root/shadowsocks/setup_cymysql.sh  && \
      rm -rf ~/.cache && touch /etc/hosts.deny && \
