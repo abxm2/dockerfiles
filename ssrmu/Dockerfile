@@ -22,12 +22,12 @@ RUN  apk --no-cache add \
                         linux-headers         && \
      ln -s /usr/bin/python3 /usr/bin/python   && \
      ln -s /usr/bin/pip3    /usr/bin/pip      && \
-     git clone -b manyuser https://github.com/wulimaxh/shadowsocksr.git "/root/shadowsocks" --depth 1 && \
-     cd  /root/shadowsocks                    && \
-     bash /root/shadowsocks/setup_cymysql.sh  && \
+     git clone https://github.com/wulimaxh/shadowsocksr.git "/root/shadowsocksr" --depth 1 && \
+     cd  /root/shadowsocksr                  && \
+     bash /root/shadowsocksr/setup_cymysql.sh  && \
      rm -rf ~/.cache && touch /etc/hosts.deny && \
      apk del --purge .build-deps
 
-WORKDIR /root/shadowsocks
+WORKDIR /root/shadowsocksr
 
-CMD python /root/shadowsocks/server.py
+CMD python /root/shadowsocksr/server.py
